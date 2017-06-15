@@ -29,7 +29,14 @@
     color: $brand-color
     font-weight: bolder
     font-size: 2.6em
-
+  
+  ul.flag-ul
+    margin-left: 50px
+    li.flag-li
+      padding-top: 15px
+      padding-left: 15px
+      img
+        width: 35px
   li a
     text-transform: uppercase
 
@@ -41,9 +48,11 @@
     background-color: $brand-color
     color: $base-dark-color
 
-
-
-.my-menu-collapsed ul
-  display: none
-
+@media (max-width: 768px)
+  ul.flag-ul
+    margin: 0 !important
+    li.flag-li
+      padding-top: 15px
+      padding-left: 15px
+      display: inline-block
 
