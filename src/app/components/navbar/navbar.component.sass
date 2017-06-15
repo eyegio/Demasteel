@@ -1,0 +1,49 @@
+@import '../../assets/variables.sass'
+
+.navbar
+  border: none
+  background-color: $base-dark-color
+
+  .navbar-toggle .icon-bar
+    width: 22px
+    background-color: $brand-color
+    transition: all 0.2s
+    &.top-bar
+      transform: rotate(45deg)
+      transform-origin: 10% 10%
+    &.middle-bar
+      opacity: 0
+    &.bottom-bar
+      transform: rotate(-45deg)
+      transform-origin: 10% 90%
+
+  .navbar-toggle.collapsed
+    .top-bar
+      transform: rotate(0)
+    .middle-bar
+      opacity: 1
+    .bottom-bar
+      transform: rotate(0)
+
+  .navbar-brand
+    color: $brand-color
+    font-weight: bolder
+    font-size: 2.6em
+
+  li a
+    text-transform: uppercase
+
+    &:hover
+      background-color: $brand-color
+      color: $base-dark-color
+
+  li.active > a
+    background-color: $brand-color
+    color: $base-dark-color
+
+
+
+.my-menu-collapsed ul
+  display: none
+
+

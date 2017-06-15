@@ -1,0 +1,34 @@
+@import '../../assets/variables.sass'
+
+#banner
+  background-image: url(../../../assets/images/banner-4.jpg)
+  padding: 1.2em;
+  margin-top: 50px;
+  background-position: center center
+  background-repeat: no-repeat
+  background-size: cover
+
+  .major
+    border: 3px solid $brand-color
+    padding: 5em
+    color: $brand-color
+    background-color: rgba($base-dark-color, .8)
+
+    h1
+      font-weight: bolder
+      line-height: 1.8em
+      text-transform: uppercase
+
+.about-text
+  padding: 10vh 5vw
+  background-color: $base-light-color
+  text-align: center
+
+
+//MORE 768
+@media screen and (min-width: 768px)
+  #banner
+    padding: 5em
+    .major
+      padding: 10em
+
