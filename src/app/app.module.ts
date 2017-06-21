@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpModule, Http } from '@angular/http'
+import { TranslateModule, TranslateLoader, TranslateStaticLoader, MissingTranslationHandler } from 'ng2-translate';
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
@@ -15,7 +16,9 @@ import { AgmCoreModule } from 'angular2-google-maps/core';
 import { AccordionModule } from 'ng2-bootstrap/accordion';
 import { ModalModule } from 'ng2-bootstrap/modal';
 
-
+export function createTranslateLoader(http: Http) {
+  return new TranslateStaticLoader(http, './assets/i18n', '.json');
+}
 
 
 
@@ -33,6 +36,11 @@ import { ModalModule } from 'ng2-bootstrap/modal';
     }),
     AccordionModule.forRoot(),
     ModalModule.forRoot(),
+    TranslateModule.forRoot({
+      provide: TranslateLoader,
+      useFactory: (createTranslateLoader),
+      deps: [Http]
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
